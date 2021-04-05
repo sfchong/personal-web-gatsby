@@ -1,0 +1,83 @@
+@use '../base/variable' as *;
+
+.site-wrapper {
+  margin: 100px 20px 20px 20px;
+  font-family: $content-font;
+
+  @media (min-width: 768px) {
+    margin: 100px;
+  }
+}
+
+.section-intro {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 50px;
+
+  @media (min-width: 1300px) {
+    margin: 50px 20%;
+  }
+
+  @media (min-width: 1600px) {
+    margin: 50px 30%;
+  }
+}
+
+.img-avatar {
+  border-radius: 50%;
+  width: 200px;
+}
+
+.avatar-name {
+  border-bottom: solid 5px $light-blue;
+  width: fit-content;
+  margin: 10px auto;
+  padding-bottom: 8px;
+  font-weight: bold;
+  font-size: 26px;
+  font-family: $primary-font;
+}
+
+.avatar-desc {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.icon-link {
+  font-size: 30px;
+  color: black;
+  margin-right: 10px;
+}
+
+.icon-link:hover {
+  color: $light-blue;
+}
+
+.box {
+  margin: 50px 0px;
+  padding: 10px 20px;
+  border: 1px solid $grey;
+  border-top: 5px solid $light-blue;
+  border-radius: 5px 5px 10px 10px;
+  transition: transform 0.2s;
+
+  @media (min-width: 1300px) {
+    margin: 50px 20%;
+  }
+
+  @media (min-width: 1600px) {
+    margin: 50px 30%;
+  }
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.section-heading {
+  font-family: $primary-font;
+  margin-bottom: 20px;
+}
+
+.section-about {
+}

@@ -1,0 +1,28 @@
+@use '../base/variable' as *;
+
+.btn {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 9999px;
+}
+
+.btn-primary {
+  background-color: $light-blue;
+  border: none;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 1px solid $light-blue;
+  color: $light-blue;
+}
+
+.btn-secondary:hover {
+  background-color: $light-blue;
+  border: none;
+  color: white;
+}

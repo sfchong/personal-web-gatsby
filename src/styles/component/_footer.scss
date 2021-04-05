@@ -1,0 +1,7 @@
+@use '../base/variable' as *;
+
+footer {
+  margin: auto;
+  text-align: center;
+  font-family: $primary-font;
+}

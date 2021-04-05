@@ -1,0 +1,50 @@
+@use '../base/variable' as *;
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-color: white;
+  backdrop-filter: blur(15px) saturate(125%);
+  font-family: $primary-font;
+
+  .nav-content {
+    margin: 30px 25px;
+
+    @media (min-width: $mobile-width) {
+      margin: 30px 100px;
+    }
+  }
+
+  .nav-home {
+    display: inline-block;
+    font-size: 26px;
+    padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  a:hover {
+    color: $light-blue;
+  }
+}
