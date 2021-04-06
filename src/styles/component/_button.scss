@@ -1,12 +1,12 @@
 @use '../base/variable' as *;
 
 .btn {
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 9999px;
+  border-radius: 5px;
 }
 
 .btn-primary {
