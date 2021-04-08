@@ -15,7 +15,7 @@ const IndexPage = () => {
       <title>SF Chong</title>
       <Header />
       <div className="site-wrapper">
-        <section className="section-intro">
+        <section className="section-avatar content-wrapper fade-in">
           <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
           <div>
             <p className="avatar-name">SF Chong</p>
@@ -40,30 +40,35 @@ const IndexPage = () => {
             </a>
           </div>
         </section>
-        <section className="section-about box">
-          <h1 className="section-heading">1 - About Me</h1>
-          <p>
-            Hello, my name is SF. I have been doing fullstack development for 3
-            years. I am passionate to explore and learn new technology to become
-            a better software engineer, who build better software for the world.
-          </p>
-          <br></br>
-          <p>I use C#/.NET, JavaScript, React, Go.</p>
-        </section>
-        <section className="section-contact box">
-          <h1 className="section-heading">2 - Contact</h1>
-          <p>
-            If you have any question or just want to say hello, I will try my
-            best to get back to you.
-          </p>
-          <br></br>
-          <div style={{ textAlign: "center" }}>
-            <a
-              className="btn btn-secondary"
-              href="mailto:soonfook11@hotmail.com"
-            >
-              Email
-            </a>
+        <section className="section-intro">
+          <div className="content-wrapper">
+            <section className="section-about box fade-in">
+              <h1 className="section-heading">1 - About Me</h1>
+              <p>
+                Hello, my name is SF. I have been doing fullstack development
+                for 3 years. I am passionate to explore and learn new technology
+                to become a better software engineer, who build better software
+                for the world.
+              </p>
+              <br></br>
+              <p>I use C#/.NET, JavaScript, React, Go.</p>
+            </section>
+            <section className="section-contact box fade-in">
+              <h1 className="section-heading">2 - Contact</h1>
+              <p>
+                If you have any question or just want to say hello, I will try
+                my best to get back to you.
+              </p>
+              <br></br>
+              <div style={{ textAlign: "center" }}>
+                <a
+                  className="btn btn-secondary"
+                  href="mailto:soonfook11@hotmail.com"
+                >
+                  Email
+                </a>
+              </div>
+            </section>
           </div>
         </section>
       </div>
