@@ -1,23 +1,24 @@
-import React from "react";
+import React from "react"
+import { Link } from "gatsby"
 
 export default function Header() {
   return (
     <header>
       <nav>
         <div className="nav-content">
-          <a className="nav-home" href="#">
+          <Link className="nav-home" to="/">
             SF Chong
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-  );
+  )
 }

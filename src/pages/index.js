@@ -1,12 +1,12 @@
-import * as React from "react";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-sans/700.css";
-import "@fontsource/ibm-plex-sans";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import "../styles/main.scss";
-import MyPhoto from "../images/my-photo.jpeg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import * as React from "react"
+import "@fontsource/noto-sans"
+import "@fontsource/noto-sans/700.css"
+import "@fontsource/ibm-plex-sans"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import "../styles/main.scss"
+import MyPhoto from "../images/my-photo.jpeg"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 // markup
 const IndexPage = () => {
@@ -16,7 +16,7 @@ const IndexPage = () => {
       <Header />
       <div className="site-wrapper">
         <section className="section-intro">
-          <img className="img-avatar" src={MyPhoto}></img>
+          <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
           <div>
             <p className="avatar-name">SF Chong</p>
             <p className="avatar-desc">
@@ -69,7 +69,7 @@ const IndexPage = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
