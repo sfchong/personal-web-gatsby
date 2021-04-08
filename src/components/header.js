@@ -10,10 +10,10 @@ export default function Header() {
             SF Chong
           </Link>
           <ul>
-            <li>
+            <li key="1">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li key="2">
               <Link to="/blog">Blog</Link>
             </li>
           </ul>
