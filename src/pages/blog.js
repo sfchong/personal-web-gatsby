@@ -5,7 +5,10 @@ import Footer from "../components/footer"
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { slug: { ne: null } } }
+    ) {
       nodes {
         id
         timeToRead
@@ -29,16 +32,18 @@ const Blog = ({ data }) => {
       <Header />
 
       <div className="site-wrapper">
-        {data.allMarkdownRemark.nodes.map(({ timeToRead, frontmatter }) => (
-          <div>
-            <Link to={"/blog/" + frontmatter.slug}>{frontmatter.title}</Link>
-            <p>{timeToRead} min read</p>
-            <p>
-              {frontmatter.date} ({frontmatter.fromNow})
-            </p>
-            <p>{frontmatter.tags.join()}</p>
-          </div>
-        ))}
+        <div className="content-wrapper">
+          {data.allMarkdownRemark.nodes.map(({ timeToRead, frontmatter }) => (
+            <div>
+              <Link to={"/blog/" + frontmatter.slug}>{frontmatter.title}</Link>
+              <p>{timeToRead} min read</p>
+              <p>
+                {frontmatter.date} ({frontmatter.fromNow})
+              </p>
+              <p>{frontmatter.tags?.join()}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>

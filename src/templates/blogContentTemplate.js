@@ -8,8 +8,9 @@ export default function Template({ data }) {
   const { frontmatter, html } = markdownRemark
   return (
     <div className="site-wrapper">
+      <title>{frontmatter.title}</title>
       <Header />
-      <div className="blog-post">
+      <div className="content-wrapper">
         <h1>{frontmatter.title}</h1>
         <h2>
           {frontmatter.date} ({frontmatter.fromNow})
