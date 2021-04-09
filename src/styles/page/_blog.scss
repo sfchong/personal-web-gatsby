@@ -87,6 +87,12 @@
   td {
     padding: 8px;
     border-collapse: collapse;
-    border: 1px solid $grey;
+    border: 1px solid $light-grey;
+  }
+
+  blockquote {
+    color: $medium-grey;
+    border-left: 4px solid $medium-grey;
+    padding-left: 20px;
   }
 }
