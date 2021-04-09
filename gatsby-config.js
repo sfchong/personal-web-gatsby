@@ -30,6 +30,12 @@ module.exports = {
               wrapperStyle: `margin-bottom:20px`,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+            },
+          },
         ],
       },
     },
