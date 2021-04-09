@@ -1,10 +1,16 @@
 // color
 $light-blue: #509dff;
-$grey: #b1b1b1;
+$light-grey: #b1b1b1;
+$medium-grey: #888888;
 
 // font
-$primary-font: "Noto Sans", sans-serif;
-$content-font: "IBM Plex Sans", sans-serif;
+$default-sans-serif-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+  "Segoe UI", Ubuntu, Roboto, sans-serif;
+$defaul-monospace-font: ui-monospace, Menlo, Consolas, "DejaVu Mono",
+  "Ubuntu Mono", monospace;
+$primary-font: "Noto Sans", $default-sans-serif-font;
+$content-font: "IBM Plex Sans", $default-sans-serif-font;
+$monospace-font: $defaul-monospace-font;
 
 // width
 $mobile-width: 768px;
