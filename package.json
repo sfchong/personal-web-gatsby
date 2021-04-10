@@ -17,6 +17,8 @@
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.2.2",
     "@fontsource/noto-sans": "^4.2.3",
+    "@fontsource/source-code-pro": "^4.2.3",
+    "@fontsource/source-sans-pro": "^4.2.2",
     "gatsby": "^3.1.2",
     "gatsby-cli": "^3.2.0",
     "gatsby-plugin-sass": "^4.2.0",
