@@ -1,5 +1,40 @@
 @use '../base/variable' as *;
 
+.blog-top-wrapper {
+  margin-bottom: 50px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.blog-title {
+  margin-bottom: 10px;
+  font-family: $primary-font;
+}
+
+.blog-date-container {
+  margin-bottom: 15px;
+}
+
+.blog-date {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid $medium-grey;
+}
+
+.blog-icon {
+  margin-right: 5px;
+  top: 0.125em;
+  position: relative;
+}
+
+.blog-tag {
+  background-color: $light-grey;
+  color: white;
+  margin-right: 5px;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
 .blog-post-content {
   font-size: 18px;
 
