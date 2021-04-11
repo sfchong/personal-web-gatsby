@@ -1,51 +1,43 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import { FaRegCalendarAlt } from "react-icons/fa"
-import { FaRegClock } from "react-icons/fa"
+import {
+  BlogDateIcon,
+  BlogHistoryIcon,
+  BlogTimeIcon,
+} from "../components/blogIcon"
+import { Layout } from "../components/layout"
 
 export default function Template({ data }) {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, timeToRead } = markdownRemark
   return (
-    <div>
-      <Header />
-      <div className="site-wrapper">
-        <title>{frontmatter.title}</title>
-        <div className="content-wrapper">
-          <div className="blog-top-wrapper">
-            <h1 className="blog-title">{frontmatter.title}</h1>
-            <div className="blog-date-container">
-              <span className="blog-date">
-                <FaRegCalendarAlt className="blog-icon" />
-                <span>{frontmatter.date}</span>
-              </span>
-              <span>
-                <FaRegClock className="blog-icon" />
-                <span>{frontmatter.fromNow}</span>
-              </span>
-            </div>
-            <div>
-              {frontmatter.tags?.map((tag) => (
-                <span className="blog-tag">{tag}</span>
-              ))}
-            </div>
-          </div>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+    <Layout title={frontmatter.title}>
+      <div className="blog-top-wrapper">
+        <h1 className="blog-title">{frontmatter.title}</h1>
+        <div className="blog-date-container">
+          <BlogDateIcon date={frontmatter.date} />
+          <BlogHistoryIcon fromNow={frontmatter.fromNow} />
+          <BlogTimeIcon timeToRead={timeToRead} />
+        </div>
+        <div>
+          {frontmatter.tags?.map((tag) => (
+            <span className="blog-tag">{tag}</span>
+          ))}
         </div>
       </div>
-      <Footer />
-    </div>
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </Layout>
   )
 }
+
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
+      timeToRead
       frontmatter {
         slug
         title

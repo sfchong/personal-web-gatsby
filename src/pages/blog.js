@@ -1,7 +1,11 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import {
+  BlogDateIcon,
+  BlogHistoryIcon,
+  BlogTimeIcon,
+} from "../components/blogIcon"
+import { Layout } from "../components/layout"
 
 export const query = graphql`
   query {
@@ -27,25 +31,36 @@ export const query = graphql`
 
 const Blog = ({ data }) => {
   return (
-    <div>
-      <title>Blog</title>
-      <Header />
+    <Layout title="Blog">
+      {data?.allMarkdownRemark?.nodes?.map(
+        ({ id, timeToRead, frontmatter }) => (
+          <BlogList
+            key={id}
+            timeToRead={timeToRead}
+            frontmatter={frontmatter}
+          />
+        )
+      )}
+    </Layout>
+  )
+}
 
-      <div className="site-wrapper">
-        <div className="content-wrapper">
-          {data.allMarkdownRemark.nodes.map(({ timeToRead, frontmatter }) => (
-            <div>
-              <Link to={"/blog/" + frontmatter.slug}>{frontmatter.title}</Link>
-              <p>{timeToRead} min read</p>
-              <p>
-                {frontmatter.date} ({frontmatter.fromNow})
-              </p>
-              <p>{frontmatter.tags?.join()}</p>
-            </div>
-          ))}
-        </div>
+const BlogList = ({ timeToRead, frontmatter }) => {
+  return (
+    <div>
+      <Link to={"/blog/" + frontmatter.slug}>{frontmatter.title}</Link>
+      <div className="">
+        <BlogDateIcon date={frontmatter.date} />
+        <BlogHistoryIcon fromNow={frontmatter.fromNow} />
+        <BlogTimeIcon timeToRead={timeToRead} />
       </div>
-      <Footer />
+      <div>
+        {frontmatter?.tags?.map((tag, index) => (
+          <span key={index} className="blog-tag">
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
   )
 }
