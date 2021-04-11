@@ -20,8 +20,10 @@ export default function Template({ data }) {
           <BlogTimeIcon timeToRead={timeToRead} />
         </div>
         <div>
-          {frontmatter.tags?.map((tag) => (
-            <span className="blog-tag">{tag}</span>
+          {frontmatter?.tags?.map((tag, index) => (
+            <span key={index} className="blog-tag">
+              {tag}
+            </span>
           ))}
         </div>
       </div>
