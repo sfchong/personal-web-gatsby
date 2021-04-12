@@ -32,24 +32,28 @@ export const query = graphql`
 const Blog = ({ data }) => {
   return (
     <Layout title="Blog">
-      {data?.allMarkdownRemark?.nodes?.map(
-        ({ id, timeToRead, frontmatter }) => (
-          <BlogList
-            key={id}
-            timeToRead={timeToRead}
-            frontmatter={frontmatter}
-          />
-        )
-      )}
+      <section className="blog-list-wrapper">
+        {data?.allMarkdownRemark?.nodes?.map(
+          ({ id, timeToRead, frontmatter }) => (
+            <BlogList
+              key={id}
+              timeToRead={timeToRead}
+              frontmatter={frontmatter}
+            />
+          )
+        )}
+      </section>
     </Layout>
   )
 }
 
 const BlogList = ({ timeToRead, frontmatter }) => {
   return (
-    <div>
-      <Link to={"/blog/" + frontmatter.slug}>{frontmatter.title}</Link>
-      <div className="">
+    <div className="blog-list-item-wrapper box">
+      <Link to={"/blog/" + frontmatter.slug}>
+        <h2 className="blog-title ">{frontmatter.title}</h2>
+      </Link>
+      <div className="blog-date-container">
         <BlogDateIcon date={frontmatter.date} />
         <BlogHistoryIcon fromNow={frontmatter.fromNow} />
         <BlogTimeIcon timeToRead={timeToRead} />

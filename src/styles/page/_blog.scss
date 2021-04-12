@@ -1,5 +1,22 @@
 @use '../base/variable' as *;
 
+.blog-list-wrapper {
+  padding-top: 20px;
+}
+
+.blog-list-item-wrapper {
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: $light-blue;
+  }
+}
+
 .blog-top-wrapper {
   margin-bottom: 50px;
   padding-top: 30px;
