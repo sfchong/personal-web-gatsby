@@ -1,0 +1,13 @@
+@use '../base/variable' as *;
+
+.site-wrapper {
+  margin-top: 100px;
+  font-family: $content-font;
+  min-height: calc(100vh - 150px);
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 20px;
+}

@@ -1,17 +1,5 @@
 @use '../base/variable' as *;
 
-.site-wrapper {
-  margin-top: 100px;
-  font-family: $content-font;
-  min-height: calc(100vh - 150px);
-}
-
-.content-wrapper {
-  max-width: 800px;
-  margin: auto;
-  padding: 0 20px;
-}
-
 .section-avatar {
   text-align: center;
   padding: 50px;
@@ -45,15 +33,6 @@
 
 .icon-link:hover {
   color: $light-blue;
-}
-
-.box {
-  margin: 50px 0px;
-  padding: 20px 20px;
-  border: 1px solid $light-grey;
-  border-top: 5px solid $light-blue;
-  border-radius: 5px;
-  background-color: white;
 }
 
 .section-heading {

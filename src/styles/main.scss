@@ -1,10 +1,12 @@
 @use 'base/variable';
 @use 'base/reset';
 @use 'base/animation';
+@use 'base/layout';
 
 @use 'component/button';
 @use 'component/navigation';
 @use 'component/footer';
+@use 'component/box';
 
 @use 'page/index';
 @use 'page/blog';
