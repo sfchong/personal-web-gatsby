@@ -1,37 +1,39 @@
 import * as React from "react"
-import { Layout } from "../components/layout"
+import { HomeLayout } from "../components/layout"
 import MyPhoto from "../images/my-photo.jpeg"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout title="SF Chong">
-      <section className="section-avatar content-wrapper fade-in">
-        <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
-        <div>
-          <p className="avatar-name">SF Chong</p>
-          <p className="avatar-desc">
-            Software engineer based in Kuala Lumpur, Malaysia.
-          </p>
-        </div>
-        <div>
-          <a
-            className="icon-link"
-            href="https://github.com/sfchong"
-            title="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            className="icon-link"
-            href="https://www.linkedin.com/in/sfchong"
-            title="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-        </div>
-      </section>
+    <HomeLayout title="SF Chong">
+      <div className="content-wrapper">
+        <section className="section-avatar content-wrapper fade-in">
+          <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
+          <div>
+            <p className="avatar-name">SF Chong</p>
+            <p className="avatar-desc">
+              Software engineer based in Kuala Lumpur, Malaysia.
+            </p>
+          </div>
+          <div>
+            <a
+              className="icon-link"
+              href="https://github.com/sfchong"
+              title="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a
+              className="icon-link"
+              href="https://www.linkedin.com/in/sfchong"
+              title="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </section>
+      </div>
       <section className="section-intro">
         <div className="content-wrapper">
           <section className="section-about box fade-in">
@@ -63,7 +65,7 @@ const IndexPage = () => {
           </section>
         </div>
       </section>
-    </Layout>
+    </HomeLayout>
   )
 }
 

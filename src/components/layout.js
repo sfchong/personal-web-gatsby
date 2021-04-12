@@ -20,3 +20,14 @@ export const Layout = (props) => {
     </>
   )
 }
+
+export const HomeLayout = (props) => {
+  return (
+    <>
+      <title>{props.title}</title>
+      <Header />
+      <div className="site-wrapper">{props.children}</div>
+      <Footer />
+    </>
+  )
+}
