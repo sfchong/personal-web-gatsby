@@ -3,7 +3,7 @@ module.exports = {
     title: "SF Chong",
   },
   flags: {
-    DEV_SSR: false,
+    DEV_SSR: true,
   },
   plugins: [
     "gatsby-plugin-sass",
