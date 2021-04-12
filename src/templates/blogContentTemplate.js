@@ -5,13 +5,13 @@ import {
   BlogHistoryIcon,
   BlogTimeIcon,
 } from "../components/blogIcon"
-import { Layout } from "../components/layout"
 
 export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html, timeToRead } = markdownRemark
   return (
-    <Layout title={frontmatter.title}>
+    <div className="content-wrapper">
+      <title>{frontmatter.title}</title>
       <div className="blog-top-wrapper">
         <h1 className="blog-title">{frontmatter.title}</h1>
         <div className="blog-date-container">
@@ -31,7 +31,7 @@ export default function Template({ data }) {
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </Layout>
+    </div>
   )
 }
 

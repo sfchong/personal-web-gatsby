@@ -1,12 +1,12 @@
 import * as React from "react"
-import { HomeLayout } from "../components/layout"
 import MyPhoto from "../images/my-photo.jpeg"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 // markup
 const IndexPage = () => {
   return (
-    <HomeLayout title="SF Chong">
+    <>
+      <title>SF Chong</title>
       <div className="content-wrapper">
         <section className="section-avatar content-wrapper fade-in">
           <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
@@ -65,7 +65,7 @@ const IndexPage = () => {
           </section>
         </div>
       </section>
-    </HomeLayout>
+    </>
   )
 }
 

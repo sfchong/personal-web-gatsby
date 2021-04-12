@@ -5,7 +5,6 @@ import {
   BlogHistoryIcon,
   BlogTimeIcon,
 } from "../components/blogIcon"
-import { Layout } from "../components/layout"
 
 export const query = graphql`
   query {
@@ -31,7 +30,8 @@ export const query = graphql`
 
 const Blog = ({ data }) => {
   return (
-    <Layout title="Blog">
+    <div className="content-wrapper">
+      <title>Blog</title>
       <section className="blog-list-wrapper">
         {data?.allMarkdownRemark?.nodes?.map(
           ({ id, timeToRead, frontmatter }) => (
@@ -43,7 +43,7 @@ const Blog = ({ data }) => {
           )
         )}
       </section>
-    </Layout>
+    </div>
   )
 }
 
