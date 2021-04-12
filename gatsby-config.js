@@ -2,6 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "SF Chong",
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     "gatsby-plugin-sass",
     `gatsby-plugin-sharp`,
