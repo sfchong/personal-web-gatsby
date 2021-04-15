@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 export default function Footer() {
   return (
     <footer>
-      <p>© 2021 SF Chong</p>
+      <p>© 2021 Adrian Chong</p>
     </footer>
-  );
+  )
 }

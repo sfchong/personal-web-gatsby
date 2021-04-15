@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "SF Chong",
+    title: "Adrian Chong",
   },
   flags: {
     DEV_SSR: true,
@@ -45,8 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `SF Chong`,
-        short_name: `SF Chong`,
+        name: `Adrian Chong`,
+        short_name: `Adrian Chong`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,

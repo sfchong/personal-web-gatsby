@@ -6,12 +6,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 const IndexPage = () => {
   return (
     <>
-      <title>SF Chong</title>
+      <title>Adrian Chong</title>
       <div className="content-wrapper">
         <section className="section-avatar content-wrapper fade-in">
           <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
           <div>
-            <p className="avatar-name">SF Chong</p>
+            <p className="avatar-name">Adrian Chong</p>
             <p className="avatar-desc">
               Software engineer based in Kuala Lumpur, Malaysia.
             </p>
@@ -39,10 +39,10 @@ const IndexPage = () => {
           <section className="section-about box fade-in">
             <h1 className="section-heading">1 - About Me</h1>
             <p>
-              Hello, my name is SF. I have been doing fullstack development for
-              3 years. I am passionate to explore and learn new technology to
-              become a better software engineer, who build better software for
-              the world.
+              Hello, my name is Adrian. I have been doing fullstack development
+              for 3 years. I am passionate to explore and learn new technology
+              to become a better software engineer, who build better software
+              for the world.
             </p>
             <br></br>
             <p>I use C#/.NET, JavaScript, React, Go.</p>

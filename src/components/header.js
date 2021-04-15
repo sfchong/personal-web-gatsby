@@ -7,7 +7,7 @@ export default function Header() {
       <nav>
         <div className="nav-content">
           <Link className="nav-home" to="/">
-            SF Chong
+            Adrian Chong
           </Link>
           <ul>
             <li key="1">
