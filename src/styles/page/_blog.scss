@@ -147,4 +147,11 @@
     border-left: 4px solid $medium-grey;
     padding-left: 20px;
   }
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    padding-top: 5px;
+  }
 }
