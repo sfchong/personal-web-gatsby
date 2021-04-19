@@ -16,7 +16,7 @@ Touch typing is a style of typing without looking at the keyboard. The typing ju
 ![touch typing finger position](./images/how-i-learn-touch-typing/touch-type-hand-position.png "Finger Position for Touch Typing")
 
 ## Why I Decided to Learn Touch Type ❓
-The reason I decided to learn touch type was because I believed it can increase my productivity as a software developer since I use my keyboard for my job all day long. Activites like coding, writing document, email, google search involve typing. I think it will definitely save my time in the long run.
+The reason I decided to learn touch type was because I believed it can increase my productivity as a software developer since I use my keyboard for my job all day long. Activities like coding, writing document, email, google search involve typing. I think it will definitely save my time in the long run.
 
 Second reason was I wanted to use [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) efficiently. Vim's keybind is designed with touch typing in mind, which you put your fingers on the home row of the keyboard, left index finger on F key and right index finger on J key. My typing was really slowing me down while I was using vim.
 
@@ -73,7 +73,7 @@ If you feel like you reach a point where it is hard to improve your wpm, try to 
 
 You can press `Ctrl+Backspace` on Windows or `Option+Delete` on Mac to delete a word rather than pressing down `Backspace` or `Delete`. This way you can correct your typo faster.
 
-From my experience, sometimes it is ok to tweak your fingering a litte bit by hitting the key with different finger for certain word if you feel more comfortable that way. For example, when I type the word "maybe", I use my left index finger to type "y" then follow by right index finger to type "b". I know some people never use their right pinky, but still able to type at 100+ wpm.
+From my experience, sometimes it is ok to tweak your fingering a little bit by hitting the key with different finger for certain word if you feel more comfortable that way. For example, when I type the word "maybe", I use my left index finger to type "y" then follow by right index finger to type "b". I know some people never use their right pinky, but still able to type at 100+ wpm.
 
 For keyboard choice, I would say it is up to personal preference. Personally, I like to use mechanical keyboard. You can just use your laptop keyboard or a membrane keyboard. You can give mechanical keyboard a try and see if you like it. If you can afford one it is definitely worth it.
 
