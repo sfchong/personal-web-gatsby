@@ -1,5 +1,5 @@
 ---
-title: "Create a Host File Shortcut on Windows"
+title: "Creating a Host File Shortcut on Windows"
 slug: "windows-host-file-shortcut"
 date: "2021-04-06"
 tags: ["windows", "productivity"]
