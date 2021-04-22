@@ -1,6 +1,10 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
+  const blogListTemplate = require.resolve(
+    `./src/templates/blogListTemplate.js`
+  )
+
   const blogPostTemplate = require.resolve(
     `./src/templates/blogContentTemplate.js`
   )
@@ -33,6 +37,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
+  // Create blog list page (/blog)
+  if (result?.data?.allMarkdownRemark?.nodes ?? false) {
+    createPage({
+      path: "blog",
+      component: blogListTemplate,
+      context: {
+        // pass data to template via context
+        nodes: result.data.allMarkdownRemark.nodes,
+      },
+    })
+  }
+
+  // Create blog content page (/blog/{slug})
   result.data.allMarkdownRemark.nodes.forEach(
     ({ html, timeToRead, frontmatter }) => {
       createPage({
