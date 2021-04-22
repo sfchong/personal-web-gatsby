@@ -8,7 +8,7 @@ const IndexPage = () => {
     <>
       <title>Adrian Chong</title>
       <div className="content-wrapper">
-        <section className="section-avatar content-wrapper fade-in">
+        <section className="section-avatar content-wrapper">
           <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
           <div>
             <p className="avatar-name">Adrian Chong</p>
@@ -36,8 +36,8 @@ const IndexPage = () => {
       </div>
       <section className="section-intro">
         <div className="content-wrapper">
-          <section className="section-about box fade-in">
-            <h1 className="section-heading">1 - About Me</h1>
+          <section className="section-about box">
+            <p className="section-heading">1 - About Me</p>
             <p>
               Hello, my name is Adrian. I have been doing fullstack development
               for 3 years. I am passionate to explore and learn new technology
@@ -47,8 +47,8 @@ const IndexPage = () => {
             <br></br>
             <p>I use C#/.NET, JavaScript, React, Go.</p>
           </section>
-          <section className="section-contact box fade-in">
-            <h1 className="section-heading">2 - Contact</h1>
+          <section className="section-contact box">
+            <p className="section-heading">2 - Contact</p>
             <p>
               If you have any question or just want to say hello, I will try my
               best to get back to you.

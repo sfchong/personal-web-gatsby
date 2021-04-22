@@ -16,17 +16,17 @@
   margin: 10px auto;
   padding-bottom: 8px;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 1.6rem;
   font-family: $primary-font;
 }
 
 .avatar-desc {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .icon-link {
-  font-size: 30px;
+  font-size: 1.8rem;
   color: black;
   margin-right: 10px;
 }
@@ -37,10 +37,13 @@
 
 .section-heading {
   font-family: $primary-font;
+  font-weight: bold;
+  font-family: 1.3rem;
   margin-bottom: 20px;
 }
 
 .section-intro {
   background-color: #f7f7f7;
   padding: 10px;
+  font-size: 1.2rem;
 }

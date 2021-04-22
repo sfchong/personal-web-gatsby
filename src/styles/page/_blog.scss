@@ -9,7 +9,7 @@
 
   a {
     text-decoration: none;
-    color: black;
+    color: $medium-blue;
   }
 
   a:hover {
@@ -26,6 +26,7 @@
 .blog-title {
   margin-bottom: 10px;
   font-family: $primary-font;
+  color: $medium-blue;
 }
 
 .blog-date-container {
@@ -53,7 +54,7 @@
 }
 
 .blog-post-content {
-  font-size: 18px;
+  font-size: 1.2rem;
 
   h1,
   h2,
@@ -79,30 +80,31 @@
   h6 {
     font-family: $primary-font;
     font-weight: bold;
+    color: $dark-grey;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 1.5rem;
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 1.45rem;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 1.4rem;
   }
 
   h4 {
-    font-size: 22px;
+    font-size: 1.35rem;
   }
 
   h5 {
-    font-size: 20px;
+    font-size: 1.3rem;
   }
 
   h6 {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 
   a {
@@ -151,7 +153,7 @@
   figcaption {
     text-align: center;
     font-style: italic;
-    font-size: 16px;
+    font-size: 1rem;
     padding-top: 5px;
   }
 }

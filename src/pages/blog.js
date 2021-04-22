@@ -49,7 +49,7 @@ const Blog = ({ data }) => {
 
 const BlogList = ({ timeToRead, frontmatter }) => {
   return (
-    <div className="blog-list-item-wrapper box">
+    <div className="blog-list-item-wrapper">
       <Link to={"/blog/" + frontmatter.slug}>
         <h2 className="blog-title ">{frontmatter.title}</h2>
       </Link>
