@@ -28,6 +28,8 @@
 .blog-title {
   margin-bottom: 10px;
   font-family: $primary-font;
+  font-size: 1.7rem;
+  font-weight: bold;
   color: $medium-blue;
 }
 
@@ -47,12 +49,20 @@
   position: relative;
 }
 
+.blog-tag-container {
+  margin-bottom: 15px;
+}
+
 .blog-tag {
   background-color: $light-grey;
   color: white;
   margin-right: 5px;
   padding: 2px 10px;
   border-radius: 5px;
+}
+
+.blog-content-preview {
+  font-size: 1.1rem;
 }
 
 .blog-post-content {
