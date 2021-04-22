@@ -1,24 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function Header() {
-  return (
-    <header>
-      <nav>
-        <div className="nav-content">
-          <Link className="nav-home" to="/">
-            Adrian Chong
-          </Link>
+class Header extends React.Component {
+  render() {
+    return (
+      <header>
+        <nav>
           <ul>
             <li key="1">
-              <Link to="/">Home</Link>
+              <Link to="/" activeClassName="active">
+                Home
+              </Link>
             </li>
             <li key="2">
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog" activeClassName="active" partiallyActive={true}>
+                Blog
+              </Link>
             </li>
           </ul>
-        </div>
-      </nav>
-    </header>
-  )
+        </nav>
+      </header>
+    )
+  }
 }
+
+export default Header
