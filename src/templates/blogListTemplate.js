@@ -5,6 +5,7 @@ import {
   BlogHistoryIcon,
   BlogTimeIcon,
 } from "../components/blogIcon"
+import parse from "html-react-parser"
 
 export default function Template({ pageContext }) {
   return (
@@ -25,9 +26,7 @@ export default function Template({ pageContext }) {
 }
 
 const BlogList = ({ timeToRead, frontmatter, html }) => {
-  let htmlText = new DOMParser().parseFromString(html, "text/html")
-    .documentElement.textContent
-  htmlText = shortenHtmlString(htmlText, 250)
+  const htmlText = parse(html)
 
   return (
     <div className="blog-list-item-wrapper">
@@ -46,12 +45,14 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
           </span>
         ))}
       </div>
-      <div className="blog-content-preview">{htmlText}</div>
+      {htmlText.length > 0 && (
+        <div className="blog-content-preview">
+          {htmlText[0]}
+          <Link to={"/blog/" + frontmatter.slug}>
+            <p>Read more...</p>
+          </Link>
+        </div>
+      )}
     </div>
   )
-}
-
-function shortenHtmlString(str, maxLen, separator = " ") {
-  if (str.length <= maxLen) return str
-  return str.substr(0, str.lastIndexOf(separator, maxLen)) + " ..."
 }
