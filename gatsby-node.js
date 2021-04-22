@@ -10,13 +10,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         filter: { frontmatter: { slug: { ne: null } } }
-        limit: 1000
       ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
+        nodes {
+          id
+          html
+          timeToRead
+          frontmatter {
+            slug
+            title
+            date(formatString: "D MMM YYYY")
+            fromNow: date(fromNow: true)
+            tags
           }
         }
       }
@@ -29,14 +33,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: "blog/" + node.frontmatter.slug,
-      component: blogPostTemplate,
-      context: {
-        // additional data can be passed via context
-        slug: node.frontmatter.slug,
-      },
-    })
-  })
+  result.data.allMarkdownRemark.nodes.forEach(
+    ({ html, timeToRead, frontmatter }) => {
+      createPage({
+        path: "blog/" + frontmatter.slug,
+        component: blogPostTemplate,
+        context: {
+          // pass data to template via context
+          html: html,
+          timeToRead: timeToRead,
+          frontmatter: frontmatter,
+        },
+      })
+    }
+  )
 }

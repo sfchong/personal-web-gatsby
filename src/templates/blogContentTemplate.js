@@ -1,14 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
 import {
   BlogDateIcon,
   BlogHistoryIcon,
   BlogTimeIcon,
 } from "../components/blogIcon"
 
-export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html, timeToRead } = markdownRemark
+export default function Template({ pageContext }) {
+  const { frontmatter, html, timeToRead } = pageContext
   return (
     <div className="content-wrapper">
       <title>{frontmatter.title}</title>
@@ -34,19 +32,3 @@ export default function Template({ data }) {
     </div>
   )
 }
-
-export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      frontmatter {
-        slug
-        title
-        date(formatString: "D MMM YYYY")
-        fromNow: date(fromNow: true)
-        tags
-      }
-    }
-  }
-`
