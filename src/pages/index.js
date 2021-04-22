@@ -56,7 +56,7 @@ const IndexPage = () => {
             <br></br>
             <div style={{ textAlign: "center" }}>
               <a
-                className="btn btn-secondary"
+                className="btn btn-primary"
                 href="mailto:adrian@adrianchongsf.com"
               >
                 Email
