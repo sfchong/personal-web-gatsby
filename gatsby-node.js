@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Create blog list page (/blog)
-  if (result?.data?.allMarkdownRemark?.nodes ?? false) {
+  if (result.data.allMarkdownRemark.nodes) {
     createPage({
       path: "blog",
       component: blogListTemplate,
