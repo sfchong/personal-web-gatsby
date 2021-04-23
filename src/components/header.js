@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FaSun, FaRegMoon } from "react-icons/fa"
 
 class Header extends React.Component {
   render() {
@@ -16,6 +17,14 @@ class Header extends React.Component {
               <Link to="/blog" activeClassName="active" partiallyActive={true}>
                 Blog
               </Link>
+            </li>
+            <li key="3">
+              <button
+                className="btn-theme-toggle"
+                onClick={this.props.toggleDarkMode}
+              >
+                {this.props.darkMode ? <FaRegMoon /> : <FaSun />}
+              </button>
             </li>
           </ul>
         </nav>

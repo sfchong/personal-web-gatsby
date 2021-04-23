@@ -43,7 +43,21 @@
 }
 
 .section-intro {
-  background-color: #f7f7f7;
+  background-color: hsl(0, 0%, 97%);
   padding: 10px;
   font-size: 1.2rem;
+}
+
+.dark {
+  .icon-link {
+    color: white;
+  }
+
+  .icon-link:hover {
+    color: $light-blue;
+  }
+
+  .section-intro {
+    background-color: hsl(0, 0%, 22%);
+  }
 }
