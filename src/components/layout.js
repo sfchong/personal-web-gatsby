@@ -11,21 +11,26 @@ import Footer from "./footer"
 const Layout = (props) => {
   const [darkMode, setDarkMode] = React.useState(false)
 
-  /*
-   * window will be undefined during SSR
-   * we must wait until it is available on the client before
-   * checking for system color scheme.
-   */
-  const checkDarkMode =
-    typeof window !== "undefined" &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-
   React.useEffect(() => {
-    setDarkMode(checkDarkMode)
-  }, [checkDarkMode])
+    // get user preference from browser local storage
+    let preferDark = localStorage.getItem("darkMode")
+
+    if (preferDark == null) {
+      // if user preference not found, check system default
+      preferDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+    } else {
+      preferDark = preferDark === "true"
+    }
+
+    setDarkMode(preferDark)
+  }, [darkMode])
 
   const toggleDarkMode = () => {
+    // save user preference to local storage
+    localStorage.setItem("darkMode", !darkMode)
+
     setDarkMode((prev) => !prev)
   }
 
