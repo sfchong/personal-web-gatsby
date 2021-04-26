@@ -6,13 +6,46 @@ import {
   BlogTimeIcon,
 } from "../components/blogIcon"
 import parse from "html-react-parser"
+import * as JsSearch from "js-search"
 
-export default function Template({ pageContext }) {
+const BlogListPage = ({ pageContext }) => {
+  const [search, setSearch] = React.useState(null)
+  const [term, setTerm] = React.useState("")
+  const [queryResult, setQueryResult] = React.useState([])
+
+  const searchEvent = (e) => {
+    const searchTerm = e.target.value
+    const result =
+      searchTerm === "" ? pageContext.nodes : search.search(searchTerm)
+
+    setTerm(searchTerm)
+    setQueryResult(result)
+  }
+
+  React.useEffect(() => {
+    const blogs = pageContext.nodes
+    const jsSearch = new JsSearch.Search("id")
+
+    jsSearch.addIndex(["frontmatter", "title"])
+    jsSearch.addDocuments(blogs)
+
+    setSearch(jsSearch)
+    setQueryResult(blogs)
+  }, [pageContext])
+
   return (
     <div className="content-wrapper">
       <title>Blog</title>
       <section className="blog-list-wrapper">
-        {pageContext.nodes?.map(({ id, html, timeToRead, frontmatter }) => (
+        <input
+          className="blog-search-textbox"
+          id="Search"
+          value={term}
+          onChange={searchEvent}
+          placeholder="Search blog posts..."
+          autoComplete="off"
+        />
+        {queryResult?.map(({ id, html, timeToRead, frontmatter }) => (
           <BlogList
             key={id}
             timeToRead={timeToRead}
@@ -56,3 +89,5 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
     </div>
   )
 }
+
+export default BlogListPage
