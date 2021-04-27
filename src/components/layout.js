@@ -37,7 +37,7 @@ const Layout = (props) => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="site-wrapper">{props.children}</div>
+      <main className="site-wrapper">{props.children}</main>
       <Footer />
     </div>
   )
