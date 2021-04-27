@@ -183,6 +183,11 @@
     font-size: 1rem;
     padding-top: 5px;
   }
+
+  :not(pre) > code[class*="language-"] {
+    color: $light-blue;
+    background-color: hsl(0, 0%, 95%);
+  }
 }
 
 .dark {
@@ -193,6 +198,21 @@
   }
 
   .blog-tag {
+    background-color: $dark-grey;
+  }
+
+  .blog-post-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $medium-blue;
+    }
+  }
+
+  :not(pre) > code[class*="language-"] {
     background-color: $dark-grey;
   }
 }
