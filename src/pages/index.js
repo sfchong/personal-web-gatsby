@@ -1,15 +1,22 @@
 import * as React from "react"
 import MyPhoto from "../images/my-photo.jpeg"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import Seo from "../components/seo"
 
 // markup
 const IndexPage = () => {
   return (
     <>
-      <title>Adrian Chong</title>
+      <Seo />
       <div className="content-wrapper">
         <section className="section-avatar content-wrapper">
-          <img className="img-avatar" src={MyPhoto} alt="avatar"></img>
+          <img
+            className="img-avatar"
+            src={MyPhoto}
+            alt="avatar"
+            width="200px"
+            height="200px"
+          />
           <div>
             <p className="avatar-name">Adrian Chong</p>
             <p className="avatar-desc">

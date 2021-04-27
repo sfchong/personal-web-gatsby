@@ -7,6 +7,7 @@ import {
 } from "../components/blogIcon"
 import parse from "html-react-parser"
 import * as JsSearch from "js-search"
+import Seo from "../components/seo"
 
 const BlogListPage = ({ pageContext }) => {
   const [search, setSearch] = React.useState(null)
@@ -35,7 +36,7 @@ const BlogListPage = ({ pageContext }) => {
 
   return (
     <div className="content-wrapper">
-      <title>Blog</title>
+      <Seo title="Blog" description="This a my blog." url="blog" />
       <section className="blog-list-wrapper">
         <input
           className="blog-search-textbox"
