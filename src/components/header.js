@@ -22,6 +22,7 @@ class Header extends React.Component {
               <button
                 className="btn-theme-toggle"
                 onClick={this.props.toggleDarkMode}
+                aria-label="theme-toggle"
               >
                 {this.props.darkMode ? <FaRegMoon /> : <FaSun />}
               </button>
