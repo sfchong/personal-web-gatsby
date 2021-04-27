@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import socialBanner from "../images/og-image.png"
 
 const SEO = ({ title, description, url }) => {
   const { site } = useStaticQuery(query)
@@ -14,14 +15,14 @@ const SEO = ({ title, description, url }) => {
   } = site.siteMetadata
 
   const seo = {
-    title: title,
+    title: title || defaultTitle,
     description: description || defaultDescription,
     url: url ? `${siteUrl}/${url}` : siteUrl,
   }
 
   return (
     <Helmet
-      title={seo.title}
+      title={title}
       titleTemplate={titleTemplate}
       defaultTitle={defaultTitle}
       htmlAttributes={{
@@ -53,6 +54,10 @@ const SEO = ({ title, description, url }) => {
         {
           property: "og:type",
           content: "website",
+        },
+        {
+          property: "og:image",
+          content: socialBanner,
         },
       ]}
     ></Helmet>
