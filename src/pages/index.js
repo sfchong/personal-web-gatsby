@@ -39,13 +39,18 @@ const IndexPage = () => {
           <section className="section-about box">
             <p className="section-heading">1 - About Me</p>
             <p>
-              Hello, my name is Adrian. I have been doing fullstack development
-              for 3 years. I am passionate to explore and learn new technology
-              to become a better software engineer, who build better software
-              for the world.
+              Hello, my name is Adrian. I am a software engineer. I have been
+              doing fullstack development for 3 years. I use C#/.NET for web
+              development and Flutter for mobile development at work.
             </p>
             <br></br>
-            <p>I use C#/.NET, JavaScript, React, Go.</p>
+            <p>
+              I am passionate to explore and learn new technology to improve my
+              skills. I am learning React and Go. I built my personal website
+              and blog with Gatsby.
+            </p>
+            <br></br>
+            <p>I write blog about programming and technology. </p>
           </section>
           <section className="section-contact box">
             <p className="section-heading">2 - Contact</p>
