@@ -2,7 +2,7 @@
 title: "How I Learn Touch Typing ⌨️"
 slug: "how-i-learn-touch-typing"
 date: "2021-04-02"
-tags: ["typing", "productivity"]
+tags: ["productivity"]
 ---
 
 I was a terrible typer. I never knew how to type properly since I know how to use a computer. Over the years I have developed my own way to type. I was using only 2 or 3 fingers on each hand, and position randomly on the keyboard. It was bad and inefficient since I have to constantly look at the keyboard and not fully utilising all the fingers. I believe my max typing was about 40 to 50 wpm (word per minute).
