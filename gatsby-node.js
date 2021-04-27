@@ -19,6 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           id
           html
           timeToRead
+          excerpt(pruneLength: 200)
           frontmatter {
             slug
             title
@@ -51,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create blog content page (/blog/{slug})
   result.data.allMarkdownRemark.nodes.forEach(
-    ({ html, timeToRead, frontmatter }) => {
+    ({ html, timeToRead, frontmatter, excerpt }) => {
       createPage({
         path: "blog/" + frontmatter.slug,
         component: blogPostTemplate,
@@ -60,6 +61,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           html: html,
           timeToRead: timeToRead,
           frontmatter: frontmatter,
+          excerpt: excerpt,
         },
       })
     }
