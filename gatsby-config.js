@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: "Adrian Chong",
+    titleTemplate: "%s | Adrian Chong",
+    url: `https://adrianchongsf.com`,
+    description: `Software engineer's personal website and blog`,
   },
   flags: {
     DEV_SSR: true,
@@ -8,6 +11,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
