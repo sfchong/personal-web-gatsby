@@ -33,7 +33,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 600,
               wrapperStyle: `margin-bottom:20px`,
               showCaptions: ["title"],
               markdownCaptions: true,
@@ -45,6 +45,7 @@ module.exports = {
               classPrefix: "language-",
             },
           },
+          "gatsby-remark-static-images",
         ],
       },
     },
