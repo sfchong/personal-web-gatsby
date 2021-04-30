@@ -7,7 +7,7 @@
 }
 
 .content-wrapper {
-  max-width: 70ch;
+  max-width: $content-max-width;
   margin: auto;
   padding: 0 20px;
 }
