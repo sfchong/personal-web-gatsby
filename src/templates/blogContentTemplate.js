@@ -1,9 +1,5 @@
 import React from "react"
-import {
-  BlogDateIcon,
-  BlogHistoryIcon,
-  BlogTimeIcon,
-} from "../components/blogIcon"
+import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon"
 import Seo from "../components/seo"
 
 export default function Template({ pageContext }) {
@@ -20,7 +16,6 @@ export default function Template({ pageContext }) {
         <h1 className="blog-title">{frontmatter.title}</h1>
         <div className="blog-date-container">
           <BlogDateIcon date={frontmatter.date} />
-          <BlogHistoryIcon fromNow={frontmatter.fromNow} />
           <BlogTimeIcon timeToRead={timeToRead} />
         </div>
         <div>

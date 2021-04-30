@@ -1,10 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import {
-  BlogDateIcon,
-  BlogHistoryIcon,
-  BlogTimeIcon,
-} from "../components/blogIcon"
+import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon"
 import parse from "html-react-parser"
 import * as JsSearch from "js-search"
 import Seo from "../components/seo"
@@ -69,7 +65,6 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
       </Link>
       <div className="blog-date-container">
         <BlogDateIcon date={frontmatter.date} />
-        <BlogHistoryIcon fromNow={frontmatter.fromNow} />
         <BlogTimeIcon timeToRead={timeToRead} />
       </div>
       <div className="blog-tag-container">
