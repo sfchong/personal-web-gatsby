@@ -109,7 +109,7 @@
   h6 {
     font-family: $primary-font;
     font-weight: bold;
-    color: $dark-grey;
+    color: $light-blue;
   }
 
   h1 {
@@ -205,17 +205,6 @@
 
   .blog-tag {
     background-color: $dark-grey;
-  }
-
-  .blog-post-content {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $medium-blue;
-    }
   }
 
   :not(pre) > code[class*="language-"] {
