@@ -173,6 +173,10 @@
     border: 1px solid $light-grey;
   }
 
+  img {
+    max-width: $content-max-width;
+  }
+
   blockquote {
     color: $medium-grey;
     border-left: 4px solid $medium-grey;
