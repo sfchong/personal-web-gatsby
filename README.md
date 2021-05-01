@@ -1,10 +1,38 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  My Personal Website
-</h1>
+# adrianchongsf.com
+My personal website using [Gatsby](https://www.gatsbyjs.com/).
 
-## 🧑🏻‍💻 Working on it...
+## Prerequisite
+- node
+- npm
+- gatsby cli
+
+## Build
+```bash
+npm install -g gatsby-cli
+git clone https://github.com/sfchong/personal-web-gatsby
+cd personal-web-gatsby
+npm install
+```
+
+To run locally
+```bash
+gatsby develop
+```
+
+To build production
+```bash
+gatsby build 
+gatsby serve
+```
+
+## Deployment
+This website is automatically built and deployed to netlify once commit/merge to `main`.
+
+## Overview
+This website uses Sass for styling with [Sass Module System](https://sass-lang.com/blog/the-module-system-is-launched). No CSS framework / UI Library is used.
+
+All the blog post are written in markdown under `src/markdowns`. The blog post list and content page is built under `gatsby-node.js` `createPages` API. The markdowns are retrieved by graphql and all pages are built during build time.
+
+Site metadata is stored in `gatsby-config.js`.
+
+Search Engine Optimization (SEO) components under `src/components/seo.js` will insert all the SEO related header tags to HTML using `react-helmet`.
