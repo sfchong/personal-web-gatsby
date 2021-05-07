@@ -1,5 +1,6 @@
 # adrianchongsf.com
 My personal website using [Gatsby](https://www.gatsbyjs.com/).
+![website homepage](docs/website-light-dark.png)
 
 ## Prerequisite
 - node
@@ -36,3 +37,7 @@ All the blog post are written in markdown under `src/markdowns`. The blog post l
 Site metadata is stored in `gatsby-config.js`.
 
 Search Engine Optimization (SEO) components under `src/components/seo.js` will insert all the SEO related header tags to HTML using `react-helmet`.
+
+## Blog Post
+You can read my blog post if you are interested in how I build this website.
+- [Building My Website with Gatsby](https://adrianchongsf.com/blog/building-my-website-with-gatsby)
