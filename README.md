@@ -1,5 +1,6 @@
 # adrianchongsf.com
 My personal website using [Gatsby](https://www.gatsbyjs.com/).
+
 ![website homepage](docs/website-light-dark.png)
 
 ## Prerequisite
