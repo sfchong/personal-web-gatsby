@@ -9,7 +9,7 @@ export default function Template({ pageContext }) {
     <div className="content-wrapper">
       <Seo
         title={frontmatter.title}
-        url={frontmatter.slug}
+        url={"blog/" + frontmatter.slug}
         description={excerpt}
       />
       <div className="blog-top-wrapper">
