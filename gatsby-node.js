@@ -1,13 +1,13 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const blogListTemplate = require.resolve(
     `./src/templates/blogListTemplate.js`
-  )
+  );
 
   const blogPostTemplate = require.resolve(
     `./src/templates/blogContentTemplate.js`
-  )
+  );
 
   const result = await graphql(`
     {
@@ -30,40 +30,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
-  `)
+  `);
 
   // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
   }
 
+  const nodes = result.data.allMarkdownRemark.nodes;
+
   // Create blog list page (/blog)
-  if (result.data.allMarkdownRemark.nodes) {
+  if (nodes) {
     createPage({
       path: "blog",
       component: blogListTemplate,
       context: {
         // pass data to template via context
-        nodes: result.data.allMarkdownRemark.nodes,
+        nodes: nodes,
       },
-    })
+    });
   }
 
   // Create blog content page (/blog/{slug})
-  result.data.allMarkdownRemark.nodes.forEach(
-    ({ html, timeToRead, frontmatter, excerpt }) => {
-      createPage({
-        path: "blog/" + frontmatter.slug,
-        component: blogPostTemplate,
-        context: {
-          // pass data to template via context
-          html: html,
-          timeToRead: timeToRead,
-          frontmatter: frontmatter,
-          excerpt: excerpt,
-        },
-      })
-    }
-  )
-}
+  nodes.forEach((node, index) => {
+    createPage({
+      path: "blog/" + node.frontmatter.slug,
+      component: blogPostTemplate,
+      context: {
+        // pass data to template via context
+        node: node,
+        prev: index === 0 ? null : nodes[index - 1],
+        next: index === nodes.length - 1 ? null : nodes[index + 1],
+      },
+    });
+  });
+};
