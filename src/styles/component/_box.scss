@@ -1,12 +1,30 @@
 @use '../base/variable' as *;
 
 .box {
-  margin: 50px 0px;
   padding: 20px 20px;
   border: 1px solid $light-grey;
   border-top: 5px solid $light-blue;
   border-radius: 5px;
   background-color: white;
+}
+
+.home-box {
+  margin: 50px 0;
+}
+
+.blog-prev-next-box {
+  padding: 10px 15px;
+  max-width: 250px;
+
+  a {
+    text-decoration: none;
+    margin-top: 10px;
+    color: $light-blue;
+  }
+}
+
+.blog-prev-next-box:last-child {
+  text-align: right;
 }
 
 .dark {

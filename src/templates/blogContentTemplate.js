@@ -1,9 +1,11 @@
-import React from "react"
-import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon"
-import Seo from "../components/seo"
+import React from "react";
+import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon";
+import Seo from "../components/seo";
+import { Link } from "gatsby";
 
 export default function Template({ pageContext }) {
-  const { frontmatter, html, timeToRead, excerpt } = pageContext
+  const { node, prev, next } = pageContext;
+  const { frontmatter, html, timeToRead, excerpt } = node;
 
   return (
     <div className="content-wrapper">
@@ -30,6 +32,28 @@ export default function Template({ pageContext }) {
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <div className="blog-prev-next-container">
+        {prev ? (
+          <div className="box blog-prev-next-box">
+            <div>&#8592; Previous</div>
+            <Link to={"/blog/" + prev.frontmatter.slug}>
+              {prev.frontmatter.title}
+            </Link>
+          </div>
+        ) : (
+          <div />
+        )}
+        {next ? (
+          <div className="box blog-prev-next-box">
+            <div>Next &#8594;</div>
+            <Link to={"/blog/" + next.frontmatter.slug}>
+              {next.frontmatter.title}
+            </Link>
+          </div>
+        ) : (
+          <div />
+        )}
+      </div>
     </div>
-  )
+  );
 }
