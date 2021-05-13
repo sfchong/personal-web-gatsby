@@ -1,7 +1,7 @@
-import * as React from "react"
-import MyPhoto from "../images/my-photo.jpeg"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-import Seo from "../components/seo"
+import * as React from "react";
+import MyPhoto from "../images/my-photo.jpeg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Seo from "../components/seo";
 
 // markup
 const IndexPage = () => {
@@ -43,29 +43,29 @@ const IndexPage = () => {
       </div>
       <section className="section-intro">
         <div className="content-wrapper">
-          <section className="section-about box">
+          <section className="section-about box home-box">
             <p className="section-heading">1 - About Me</p>
             <p>
               Hello, my name is Adrian. I am a software engineer. I have been
               doing fullstack development for 3 years. I use C#/.NET for web
               development and Flutter for mobile development at work.
             </p>
-            <br></br>
+            <br />
             <p>
               I am passionate to explore and learn new technology to improve my
               skills. I am learning React and Go. I built my personal website
               and blog with Gatsby.
             </p>
-            <br></br>
+            <br />
             <p>I write blog about programming and technology. </p>
           </section>
-          <section className="section-contact box">
+          <section className="section-contact box home-box">
             <p className="section-heading">2 - Contact</p>
             <p>
               If you have any question or just want to say hello, I will try my
               best to get back to you.
             </p>
-            <br></br>
+            <br />
             <div style={{ textAlign: "center" }}>
               <a
                 className="btn btn-primary"
@@ -78,7 +78,7 @@ const IndexPage = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
