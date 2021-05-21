@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.blog-search-textbox-container {
+  display: flex;
+}
+
 .blog-search-textbox {
   width: 100%;
   padding: 10px;
@@ -68,12 +72,26 @@
   margin-bottom: 15px;
 }
 
+.blog-tag-filter-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .blog-tag {
   background-color: $light-grey;
   color: white;
-  margin-right: 5px;
+  margin: 0 5px 10px 0;
   padding: 2px 10px;
   border-radius: 5px;
+  font-family: $content-font;
+  font-size: 1rem;
+  border: none;
+}
+
+.blog-tag-filter.active,
+.blog-tag-filter:hover {
+  color: white;
+  background-color: $light-blue;
 }
 
 .blog-content-preview {
@@ -212,6 +230,12 @@
 
   .blog-tag {
     background-color: $dark-grey;
+  }
+
+  .blog-tag-filter.active,
+  .blog-tag-filter:hover {
+    color: white;
+    background-color: $light-blue;
   }
 
   :not(pre) > code[class*="language-"] {
