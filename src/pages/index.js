@@ -46,24 +46,35 @@ const IndexPage = () => {
           <section className="section-about box home-box">
             <p className="section-heading">1 - About Me</p>
             <p>
-              Hello, my name is Adrian. I am a software engineer. I have been
-              doing fullstack development for 3 years. I use C#/.NET for web
-              development and Flutter for mobile development at work.
+              I am a software engineer from Malaysia with more than 3 years of
+              professional experience. Currently, I'm working at&nbsp;
+              <a
+                href="https://www.seekasia.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SEEK Asia
+              </a>
+              , building one of the leading online employment platform in Asia.
             </p>
             <br />
             <p>
-              I am passionate to explore and learn new technology to improve my
-              skills. I am learning React and Go. I built my personal website
-              and blog with Gatsby.
+              My main focus these days is building backend services with Node.js
+              and AWS services like S3, ECS, Lambda, Elasticseach, SNS, SQS etc.
+              Previously, I used to build web application using .NET and mobile
+              application using Flutter.
             </p>
             <br />
-            <p>I write blog about programming and technology. </p>
+            <p>
+              I am naturally curious, passionate to explore and learn new
+              technology to improve my skills. Currently, I am learning React
+              and Go.
+            </p>
           </section>
           <section className="section-contact box home-box">
             <p className="section-heading">2 - Contact</p>
             <p>
-              If you have any question or just want to say hello, I will try my
-              best to get back to you.
+              If you wish to contact me, I will try my best to get back to you.
             </p>
             <br />
             <div style={{ textAlign: "center" }}>
