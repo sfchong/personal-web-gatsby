@@ -1,4 +1,6 @@
 # adrianchongsf.com
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e10c4c3a-c81c-4dd8-9f66-e79d1b3fa6db/deploy-status)](https://app.netlify.com/sites/adrianchongsf/deploys)
+
 My personal website using [Gatsby](https://www.gatsbyjs.com/).
 
 ![website homepage](docs/website-light-dark.png)
