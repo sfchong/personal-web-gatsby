@@ -38,11 +38,5 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "sass": "^1.45.0"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": false,
-    "trailingComma": "es5"
   }
 }
