@@ -1,27 +1,36 @@
-import React from "react";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-sans/700.css";
-import "@fontsource/source-sans-pro";
-import "@fontsource/source-sans-pro/700.css";
-import "@fontsource/source-code-pro";
-import "../styles/main.scss";
-import Header from "./header";
-import Footer from "./footer";
+import React, { useState, useEffect } from 'react';
+import '@fontsource/noto-sans';
+import '@fontsource/noto-sans/700.css';
+import '@fontsource/source-sans-pro';
+import '@fontsource/source-sans-pro/700.css';
+import '@fontsource/source-code-pro';
+import '../styles/main.scss';
+import Header from './header';
+import Footer from './footer';
 
-const Layout = (props) => {
-  const [darkMode, setDarkMode] = React.useState(false);
+const Layout = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
 
-  React.useEffect(() => {
+  // Set HTML body background to dark color, body tag is not React component, access directly using document.body
+  const setHtmlBodyDark = (isDarkMode) => {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  };
+
+  useEffect(() => {
     // get user preference from browser local storage
-    let preferDark = localStorage.getItem("darkMode");
+    let preferDark = localStorage.getItem('darkMode');
 
     if (preferDark == null) {
       // if user preference not found, check system default
       preferDark =
         window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
     } else {
-      preferDark = preferDark === "true";
+      preferDark = preferDark === 'true';
     }
 
     setHtmlBodyDark(preferDark);
@@ -30,26 +39,17 @@ const Layout = (props) => {
 
   const toggleDarkMode = () => {
     // save user preference to local storage, the value is always reversed after toggling
-    localStorage.setItem("darkMode", !darkMode);
+    localStorage.setItem('darkMode', !darkMode);
 
     // if current value is not dark mode, means after toggle it will be dark mode
     setHtmlBodyDark(!darkMode);
     setDarkMode((prev) => !prev);
   };
 
-  // Set HTML body background to dark color, body tag is not React component, access directly using document.body
-  const setHtmlBodyDark = (isDarkMode) => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  };
-
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={darkMode ? 'dark' : ''}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="site-wrapper">{props.children}</main>
+      <main className="site-wrapper">{children}</main>
       <Footer />
     </div>
   );

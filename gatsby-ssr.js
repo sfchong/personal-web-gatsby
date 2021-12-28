@@ -1,3 +1,4 @@
-import CustomLayout from "./wrapPageElement"
+import CustomLayout from './wrapPageElement';
 
-export const wrapPageElement = CustomLayout
+// eslint-disable-next-line import/prefer-default-export
+export const wrapPageElement = CustomLayout;

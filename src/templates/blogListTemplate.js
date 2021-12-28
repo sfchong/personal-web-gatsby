@@ -1,20 +1,20 @@
-import * as React from "react";
-import { Link } from "gatsby";
-import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon";
-import parse from "html-react-parser";
-import * as JsSearch from "js-search";
-import Seo from "../components/seo";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
+import { BlogDateIcon, BlogTimeIcon } from '../components/blogIcon';
+import parse from 'html-react-parser';
+import * as JsSearch from 'js-search';
+import Seo from '../components/seo';
 
 const BlogListPage = ({ pageContext }) => {
-  const [search, setSearch] = React.useState(null);
-  const [term, setTerm] = React.useState("");
-  const [queryResult, setQueryResult] = React.useState([]);
-  const [selectedTag, setSelectedTag] = React.useState("");
+  const [search, setSearch] = useState(null);
+  const [term, setTerm] = useState('');
+  const [queryResult, setQueryResult] = useState([]);
+  const [selectedTag, setSelectedTag] = useState('');
 
   const searchEvent = (e) => {
     const searchTerm = e.target.value;
     let result =
-      searchTerm === "" ? pageContext.nodes : search.search(searchTerm);
+      searchTerm === '' ? pageContext.nodes : search.search(searchTerm);
 
     if (selectedTag) {
       result = result.filter((node) =>
@@ -27,23 +27,23 @@ const BlogListPage = ({ pageContext }) => {
   };
 
   const clickTagEvent = (e) => {
-    const clickedTag = e.target.value === selectedTag ? "" : e.target.value;
+    const clickedTag = e.target.value === selectedTag ? '' : e.target.value;
     const filteredResult =
-      clickedTag === ""
+      clickedTag === ''
         ? pageContext.nodes
         : pageContext.nodes.filter((node) =>
             node.frontmatter.tags.some((tag) => tag === clickedTag)
           );
     setSelectedTag(clickedTag);
     setQueryResult(filteredResult);
-    setTerm("");
+    setTerm('');
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const blogs = pageContext.nodes;
-    const jsSearch = new JsSearch.Search("id");
+    const jsSearch = new JsSearch.Search('id');
 
-    jsSearch.addIndex(["frontmatter", "title"]);
+    jsSearch.addIndex(['frontmatter', 'title']);
     jsSearch.addDocuments(blogs);
 
     setSearch(jsSearch);
@@ -93,7 +93,7 @@ const TagList = ({ nodes, selectedTag, event }) => {
     <div className="blog-tag-filter-container">
       {tagList &&
         tagList.map((tag, index) => {
-          const isSelected = selectedTag === tag ? "active" : "";
+          const isSelected = selectedTag === tag ? 'active' : '';
           return (
             <button
               className={`blog-tag blog-tag-filter ${isSelected}`}
@@ -114,7 +114,7 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
 
   return (
     <div className="blog-list-item-wrapper">
-      <Link to={"/blog/" + frontmatter.slug}>
+      <Link to={'/blog/' + frontmatter.slug}>
         <p className="blog-title ">{frontmatter.title}</p>
       </Link>
       <div className="blog-date-container">
@@ -131,7 +131,7 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
       {htmlText.length > 0 && (
         <div className="blog-content-preview">
           {htmlText[0]}
-          <Link to={"/blog/" + frontmatter.slug}>
+          <Link to={'/blog/' + frontmatter.slug}>
             <p>Read more...</p>
           </Link>
         </div>

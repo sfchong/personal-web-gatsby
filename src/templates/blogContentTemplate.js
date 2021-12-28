@@ -1,7 +1,7 @@
-import React from "react";
-import { BlogDateIcon, BlogTimeIcon } from "../components/blogIcon";
-import Seo from "../components/seo";
-import { Link } from "gatsby";
+import React from 'react';
+import { BlogDateIcon, BlogTimeIcon } from '../components/blogIcon';
+import Seo from '../components/seo';
+import { Link } from 'gatsby';
 
 export default function Template({ pageContext }) {
   const { node, prev, next } = pageContext;
@@ -11,7 +11,7 @@ export default function Template({ pageContext }) {
     <div className="content-wrapper">
       <Seo
         title={frontmatter.title}
-        url={"blog/" + frontmatter.slug}
+        url={'blog/' + frontmatter.slug}
         description={excerpt}
       />
       <div className="blog-top-wrapper">
@@ -36,7 +36,7 @@ export default function Template({ pageContext }) {
         {prev ? (
           <div className="box blog-prev-next-box">
             <div>&#8592; Previous</div>
-            <Link to={"/blog/" + prev.frontmatter.slug}>
+            <Link to={'/blog/' + prev.frontmatter.slug}>
               {prev.frontmatter.title}
             </Link>
           </div>
@@ -46,7 +46,7 @@ export default function Template({ pageContext }) {
         {next ? (
           <div className="box blog-prev-next-box">
             <div>Next &#8594;</div>
-            <Link to={"/blog/" + next.frontmatter.slug}>
+            <Link to={'/blog/' + next.frontmatter.slug}>
               {next.frontmatter.title}
             </Link>
           </div>

@@ -38,16 +38,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const nodes = result.data.allMarkdownRemark.nodes;
+  const { nodes } = result.data.allMarkdownRemark;
 
   // Create blog list page (/blog)
   if (nodes) {
     createPage({
-      path: "blog",
+      path: 'blog',
       component: blogListTemplate,
       context: {
         // pass data to template via context
-        nodes: nodes,
+        nodes,
       },
     });
   }
@@ -55,11 +55,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog content page (/blog/{slug})
   nodes.forEach((node, index) => {
     createPage({
-      path: "blog/" + node.frontmatter.slug,
+      path: `blog/${node.frontmatter.slug}`,
       component: blogPostTemplate,
       context: {
         // pass data to template via context
-        node: node,
+        node,
         prev: index === 0 ? null : nodes[index - 1],
         next: index === nodes.length - 1 ? null : nodes[index + 1],
       },

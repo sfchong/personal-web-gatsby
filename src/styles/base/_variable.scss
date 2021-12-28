@@ -7,13 +7,13 @@ $medium-grey: #888888;
 $dark-grey: #4d4d4d;
 
 // font
-$default-sans-serif-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-  "Segoe UI", Ubuntu, Roboto, sans-serif;
-$defaul-monospace-font: ui-monospace, Menlo, Consolas, "DejaVu Mono",
-  "Ubuntu Mono", monospace;
-$primary-font: "Noto Sans", $default-sans-serif-font;
-$content-font: "Source Sans Pro", $default-sans-serif-font;
-$monospace-font: "Source Code Pro", $defaul-monospace-font;
+$default-sans-serif-font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  'Segoe UI', Ubuntu, Roboto, sans-serif;
+$defaul-monospace-font: ui-monospace, Menlo, Consolas, 'DejaVu Mono',
+  'Ubuntu Mono', monospace;
+$primary-font: 'Noto Sans', $default-sans-serif-font;
+$content-font: 'Source Sans Pro', $default-sans-serif-font;
+$monospace-font: 'Source Code Pro', $defaul-monospace-font;
 
 // width
 $content-max-width: 600px;
