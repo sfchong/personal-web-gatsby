@@ -1,3 +1,5 @@
+require('ts-node').register();
+
 module.exports = {
   siteMetadata: {
     title: 'Adrian Chong',

@@ -1,15 +1,19 @@
-exports.createPages = async ({ actions, graphql, reporter }) => {
+import { GatsbyNode } from 'gatsby';
+import { resolve } from 'path';
+import { MarkdownRemark } from 'types/markdown';
+
+export const createPages: GatsbyNode['createPages'] = async ({
+  actions,
+  graphql,
+  reporter,
+}) => {
   const { createPage } = actions;
 
-  const blogListTemplate = require.resolve(
-    `./src/templates/blogListTemplate.js`
-  );
+  const blogListTemplate = resolve(`./src/templates/blogListTemplate.tsx`);
 
-  const blogPostTemplate = require.resolve(
-    `./src/templates/blogContentTemplate.js`
-  );
+  const blogPostTemplate = resolve(`./src/templates/blogContentTemplate.tsx`);
 
-  const result = await graphql(`
+  const result = await graphql<MarkdownRemark>(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }

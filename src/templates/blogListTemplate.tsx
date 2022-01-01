@@ -4,20 +4,29 @@ import { BlogDateIcon, BlogTimeIcon } from '../components/blogIcon';
 import parse from 'html-react-parser';
 import * as JsSearch from 'js-search';
 import Seo from '../components/seo';
+import { FrontMatter, Node } from 'types/markdown';
 
-const BlogListPage = ({ pageContext }) => {
+interface BlogListPageProps {
+  pageContext: {
+    nodes: Node[]
+  }
+}
+
+const BlogListPage = ({ pageContext }: BlogListPageProps) => {
+  const { nodes } = pageContext
+
   const [search, setSearch] = useState(null);
   const [term, setTerm] = useState('');
-  const [queryResult, setQueryResult] = useState([]);
+  const [queryResult, setQueryResult] = useState<Node[]>([]);
   const [selectedTag, setSelectedTag] = useState('');
 
-  const searchEvent = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
-    let result =
-      searchTerm === '' ? pageContext.nodes : search.search(searchTerm);
+    let result: Node[] =
+      searchTerm === '' ? nodes : search.search(searchTerm);
 
     if (selectedTag) {
-      result = result.filter((node) =>
+      result = result.filter((node: Node) =>
         node.frontmatter.tags.some((tag) => tag === selectedTag)
       );
     }
@@ -26,12 +35,13 @@ const BlogListPage = ({ pageContext }) => {
     setQueryResult(result);
   };
 
-  const clickTagEvent = (e) => {
-    const clickedTag = e.target.value === selectedTag ? '' : e.target.value;
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const buttonValue = (e.target as HTMLButtonElement).value
+    const clickedTag = buttonValue === selectedTag ? '' : buttonValue;
     const filteredResult =
       clickedTag === ''
-        ? pageContext.nodes
-        : pageContext.nodes.filter((node) =>
+        ? nodes
+        : nodes.filter((node) =>
             node.frontmatter.tags.some((tag) => tag === clickedTag)
           );
     setSelectedTag(clickedTag);
@@ -40,7 +50,7 @@ const BlogListPage = ({ pageContext }) => {
   };
 
   useEffect(() => {
-    const blogs = pageContext.nodes;
+    const blogs = nodes;
     const jsSearch = new JsSearch.Search('id');
 
     jsSearch.addIndex(['frontmatter', 'title']);
@@ -48,7 +58,7 @@ const BlogListPage = ({ pageContext }) => {
 
     setSearch(jsSearch);
     setQueryResult(blogs);
-  }, [pageContext]);
+  }, [nodes]);
 
   return (
     <div className="content-wrapper">
@@ -59,15 +69,15 @@ const BlogListPage = ({ pageContext }) => {
             className="blog-search-textbox"
             id="Search"
             value={term}
-            onChange={searchEvent}
+            onChange={handleChange}
             placeholder="Search blog posts..."
             autoComplete="off"
           />
         </div>
         <TagList
-          nodes={pageContext.nodes}
+          nodes={nodes}
           selectedTag={selectedTag}
-          event={clickTagEvent}
+          onClick={handleClick}
         />
         {queryResult?.map(({ id, html, timeToRead, frontmatter }) => (
           <BlogList
@@ -82,8 +92,14 @@ const BlogListPage = ({ pageContext }) => {
   );
 };
 
-const TagList = ({ nodes, selectedTag, event }) => {
-  const tagSet = new Set();
+interface TagListProps {
+  nodes: Node[];
+  selectedTag: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+}
+
+const TagList = ({ nodes, selectedTag, onClick }: TagListProps) => {
+  const tagSet = new Set<string>();
   nodes.forEach((node) =>
     node.frontmatter.tags.forEach((tag) => tagSet.add(tag))
   );
@@ -98,7 +114,7 @@ const TagList = ({ nodes, selectedTag, event }) => {
             <button
               className={`blog-tag blog-tag-filter ${isSelected}`}
               value={tag}
-              onClick={event}
+              onClick={onClick}
               key={index}
             >
               {tag}
@@ -109,7 +125,13 @@ const TagList = ({ nodes, selectedTag, event }) => {
   );
 };
 
-const BlogList = ({ timeToRead, frontmatter, html }) => {
+interface BlogListProps {
+  timeToRead: number;
+  frontmatter: FrontMatter;
+  html: string
+}
+
+const BlogList = ({ timeToRead, frontmatter, html }: BlogListProps) => {
   const htmlText = parse(html);
 
   return (
@@ -128,7 +150,7 @@ const BlogList = ({ timeToRead, frontmatter, html }) => {
           </span>
         ))}
       </div>
-      {htmlText.length > 0 && (
+      {htmlText instanceof Array && htmlText.length > 0 && (
         <div className="blog-content-preview">
           {htmlText[0]}
           <Link to={'/blog/' + frontmatter.slug}>

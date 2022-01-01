@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FaSun, FaRegMoon } from 'react-icons/fa';
 
-const Header = ({ toggleDarkMode, darkMode }) => (
+interface Props {
+  toggleDarkMode: () => void;
+  darkMode: boolean
+}
+
+const Header = ({ toggleDarkMode, darkMode }: Props) => (
   <header>
     <nav>
       <ul>

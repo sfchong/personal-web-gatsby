@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import socialBanner from '../images/og-image.png';
+import { Site } from 'types/siteMetaData';
 
 const query = graphql`
   query SEO {
@@ -10,29 +11,34 @@ const query = graphql`
         defaultTitle: title
         titleTemplate
         defaultDescription: description
-        siteUrl: url
+        baseUrl: url
       }
     }
   }
 `;
 
-const SEO = ({ title, description, url }) => {
-  const { site } = useStaticQuery(query);
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string
+}
 
-  const { defaultTitle, titleTemplate, defaultDescription, siteUrl } =
+const SEO = ({ title, description, url }: Props) => {
+  const { site } = useStaticQuery<Site>(query);
+
+  const { titleTemplate, baseUrl } =
     site.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: url ? `${siteUrl}/${url}` : siteUrl,
+    title: title,
+    description: description,
+    url: url ? `${baseUrl}/${url}` : baseUrl,
   };
 
   return (
     <Helmet
       title={title}
       titleTemplate={titleTemplate}
-      defaultTitle={defaultTitle}
       htmlAttributes={{
         lang: 'en',
       }}
@@ -72,10 +78,12 @@ const SEO = ({ title, description, url }) => {
   );
 };
 
-export default SEO;
-
 SEO.defaultProps = {
   title: null,
   description: null,
   image: null,
 };
+
+export default SEO;
+
+

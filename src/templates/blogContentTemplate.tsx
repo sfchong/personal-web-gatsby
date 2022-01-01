@@ -2,8 +2,17 @@ import React from 'react';
 import { BlogDateIcon, BlogTimeIcon } from '../components/blogIcon';
 import Seo from '../components/seo';
 import { Link } from 'gatsby';
+import { Node } from 'types/markdown';
 
-export default function Template({ pageContext }) {
+interface Props {
+  pageContext: {
+    node: Node;
+    prev: Node;
+    next: Node
+  }
+}
+
+export default function Template({ pageContext }: Props) {
   const { node, prev, next } = pageContext;
   const { frontmatter, html, timeToRead, excerpt } = node;
 
