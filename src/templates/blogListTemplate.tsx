@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Search } from 'js-search';
 import { Node } from 'types/markdown';
-import TagList from 'components/tagList';
-import BlogList from 'components/blogList';
+import TagList from '../components/tagList';
+import BlogList from '../components/blogList';
 import Seo from '../components/seo';
 
 interface BlogListPageProps {
