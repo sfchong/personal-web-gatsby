@@ -9,7 +9,7 @@ import Header from './header';
 import Footer from './footer';
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const Layout = ({ children }: Props) => {

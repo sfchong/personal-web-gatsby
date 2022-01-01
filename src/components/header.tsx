@@ -4,7 +4,7 @@ import { FaSun, FaRegMoon } from 'react-icons/fa';
 
 interface Props {
   toggleDarkMode: () => void;
-  darkMode: boolean
+  darkMode: boolean;
 }
 
 const Header = ({ toggleDarkMode, darkMode }: Props) => (
