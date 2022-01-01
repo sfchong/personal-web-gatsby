@@ -8,11 +8,9 @@ My personal website using [Gatsby](https://www.gatsbyjs.com/).
 ## Prerequisite
 - node
 - npm
-- gatsby cli
 
 ## Build
 ```bash
-npm install -g gatsby-cli
 git clone https://github.com/sfchong/personal-web-gatsby
 cd personal-web-gatsby
 npm install
@@ -20,13 +18,13 @@ npm install
 
 To run locally
 ```bash
-gatsby develop
+npm start
 ```
 
 To build production
 ```bash
-gatsby build 
-gatsby serve
+npm run build 
+npm run serve
 ```
 
 ## Deployment
@@ -40,6 +38,8 @@ All the blog post are written in markdown under `src/markdowns`. The blog post l
 Site metadata is stored in `gatsby-config.js`.
 
 Search Engine Optimization (SEO) components under `src/components/seo.js` will insert all the SEO related header tags to HTML using `react-helmet`.
+
+**Update 1 Jan 2022:** Migrated from Javascript to Typescript.
 
 ## Blog Post
 You can read my blog post if you are interested in how I build this website.
