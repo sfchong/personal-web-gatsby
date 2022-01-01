@@ -5,7 +5,6 @@ const notFoundWrapper = {
   paddingTop: '70px',
 };
 
-// markup
 const NotFoundPage = () => (
   <div className="content-wrapper" style={notFoundWrapper}>
     <title>Not found</title>
