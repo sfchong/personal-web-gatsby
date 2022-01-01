@@ -215,7 +215,7 @@
     padding-top: 5px;
   }
 
-  :not(pre) > code[class*="language-"] {
+  :not(pre) > code[class*='language-'] {
     color: $light-blue;
     background-color: hsl(0, 0%, 95%);
   }
@@ -238,7 +238,7 @@
     background-color: $light-blue;
   }
 
-  :not(pre) > code[class*="language-"] {
+  :not(pre) > code[class*='language-'] {
     background-color: $dark-grey;
   }
 }

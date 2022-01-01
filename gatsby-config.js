@@ -1,15 +1,14 @@
+require('ts-node').register();
+
 module.exports = {
   siteMetadata: {
-    title: "Adrian Chong",
-    titleTemplate: "%s | Adrian Chong",
+    title: 'Adrian Chong',
+    titleTemplate: '%s | Adrian Chong',
     url: `https://adrianchongsf.com`,
     description: `Software engineer's personal website and blog`,
   },
-  flags: {
-    DEV_SSR: true,
-  },
   plugins: [
-    "gatsby-plugin-sass",
+    'gatsby-plugin-sass',
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
@@ -35,17 +34,17 @@ module.exports = {
             options: {
               maxWidth: 600,
               wrapperStyle: `margin-bottom:20px`,
-              showCaptions: ["title"],
+              showCaptions: ['title'],
               markdownCaptions: true,
             },
           },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
             },
           },
-          "gatsby-remark-static-images",
+          'gatsby-remark-static-images',
         ],
       },
     },
@@ -62,4 +61,4 @@ module.exports = {
       },
     },
   ],
-}
+};
