@@ -2,6 +2,7 @@ import { GatsbyNode } from 'gatsby';
 import { resolve } from 'path';
 import { MarkdownRemark } from 'types/markdown';
 
+// eslint-disable-next-line import/prefer-default-export
 export const createPages: GatsbyNode['createPages'] = async ({
   actions,
   graphql,
@@ -42,7 +43,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     return;
   }
 
-  const { nodes } = result.data.allMarkdownRemark;
+  const { nodes } = result?.data?.allMarkdownRemark || {};
 
   // Create blog list page (/blog)
   if (nodes) {
@@ -54,19 +55,19 @@ export const createPages: GatsbyNode['createPages'] = async ({
         nodes,
       },
     });
-  }
 
-  // Create blog content page (/blog/{slug})
-  nodes.forEach((node, index) => {
-    createPage({
-      path: `blog/${node.frontmatter.slug}`,
-      component: blogPostTemplate,
-      context: {
-        // pass data to template via context
-        node,
-        prev: index === 0 ? null : nodes[index - 1],
-        next: index === nodes.length - 1 ? null : nodes[index + 1],
-      },
+    // Create blog content page (/blog/{slug})
+    nodes.forEach((node, index) => {
+      createPage({
+        path: `blog/${node.frontmatter.slug}`,
+        component: blogPostTemplate,
+        context: {
+          // pass data to template via context
+          node,
+          prev: index === 0 ? null : nodes[index - 1],
+          next: index === nodes.length - 1 ? null : nodes[index + 1],
+        },
+      });
     });
-  });
+  }
 };

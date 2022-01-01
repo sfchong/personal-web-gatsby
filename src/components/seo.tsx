@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import socialBanner from '../images/og-image.png';
 import { Site } from 'types/siteMetaData';
+import socialBanner from '../images/og-image.png';
 
 const query = graphql`
   query SEO {
@@ -20,18 +20,17 @@ const query = graphql`
 interface Props {
   title?: string;
   description?: string;
-  url?: string
+  url?: string;
 }
 
 const SEO = ({ title, description, url }: Props) => {
   const { site } = useStaticQuery<Site>(query);
 
-  const { titleTemplate, baseUrl } =
-    site.siteMetadata;
+  const { titleTemplate, baseUrl } = site.siteMetadata;
 
   const seo = {
-    title: title,
-    description: description,
+    title,
+    description,
     url: url ? `${baseUrl}/${url}` : baseUrl,
   };
 
@@ -81,9 +80,7 @@ const SEO = ({ title, description, url }: Props) => {
 SEO.defaultProps = {
   title: null,
   description: null,
-  image: null,
+  url: null,
 };
 
 export default SEO;
-
-
