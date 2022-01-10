@@ -24,24 +24,6 @@ const Layout = ({ children }: Props) => {
     }
   };
 
-  useEffect(() => {
-    // get user preference from browser local storage
-    const preferDarkFromStorage = localStorage.getItem('darkMode');
-    let preferDark = false;
-
-    if (preferDarkFromStorage === null) {
-      // if user preference not found, check system default
-      preferDark =
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches;
-    } else {
-      preferDark = preferDarkFromStorage === 'true';
-    }
-
-    setHtmlBodyDark(preferDark);
-    setDarkMode(preferDark);
-  }, [darkMode]);
-
   const toggleDarkMode = () => {
     // save user preference to local storage, the value is always reversed after toggling
     localStorage.setItem('darkMode', String(!darkMode));
@@ -51,8 +33,18 @@ const Layout = ({ children }: Props) => {
     setDarkMode((prev) => !prev);
   };
 
+  // initialize dark mode state based on body class set by theme script
+  useEffect(() => {
+    const bodyClasses = document?.querySelector('body')?.classList;
+
+    if (bodyClasses?.value) {
+      const isDark = bodyClasses.value === 'dark';
+      setDarkMode(isDark);
+    }
+  }, []);
+
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div id="theme-container" className={darkMode ? 'dark' : undefined}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="site-wrapper">{children}</main>
       <Footer />
