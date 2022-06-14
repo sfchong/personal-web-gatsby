@@ -1,6 +1,6 @@
-require('ts-node').register();
+import { GatsbyConfig } from 'gatsby';
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Adrian Chong',
     titleTemplate: '%s | Adrian Chong',
@@ -62,3 +62,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;
