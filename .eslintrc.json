@@ -7,7 +7,7 @@
   "env": {
     "browser": true
   },
-  "ignorePatterns": ["gatsby-config.js"],
+  "ignorePatterns": ["public/*", "gatsby-config.js"],
   "rules": {
     "react/no-array-index-key": "off",
     "react/function-component-definition": [
