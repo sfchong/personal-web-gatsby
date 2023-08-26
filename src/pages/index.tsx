@@ -1,7 +1,5 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import MyPhoto from '../images/my-photo.jpeg';
-import Seo from '../components/seo';
 
 // markup
 const IndexPage = () => (
