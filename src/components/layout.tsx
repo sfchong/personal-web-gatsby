@@ -45,7 +45,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <div id="theme-container" className={darkMode ? 'dark' : undefined}>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      {/* <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
       <main className="site-wrapper">{children}</main>
       <Footer />
     </div>
